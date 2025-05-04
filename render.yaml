@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: messenger-webhook
+    env: node
+    region: singapore # Choose a region close to your users
+    plan: free # Change this to a paid plan if needed
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: PAGE_ACCESS_TOKEN
+        sync: false # Requires manual input in Render dashboard
+      - key: VERIFY_TOKEN
+        sync: false # Requires manual input in Render dashboard
+      - key: SUPABASE_URL
+        sync: false # Requires manual input in Render dashboard
+      - key: SUPABASE_KEY
+        sync: false # Requires manual input in Render dashboard
